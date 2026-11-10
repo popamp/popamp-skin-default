@@ -1,0 +1,14 @@
+[package]
+name = "popamp-skin-default"
+description = "Popamp's default skin: a vector skin, compiled into the player"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.96"
+authors = ["Gunyakov <web@gunyakov.pro>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/popamp/popamp-skin-default"
+homepage = "https://github.com/popamp/popamp"
+keywords = ["popamp", "skin"]
+categories = ["multimedia::audio"]
+# What the player compiles in; the preview picture is not part of it.
+include = ["Cargo.toml", "src/**", "skin.toml", "*.svg", "README.md", "LICENSE-*"]
