@@ -43,17 +43,36 @@ def main(p):
 TRANSPORT = (("previous", 0, 23), ("play", 23, 23), ("pause", 46, 23), ("stop", 69, 23), ("next", 92, 22))
 
 
-def transport_glyph(name, x, y):
-    """A transport button's sign as one outline, in a 23 x 18 button at `x`, `y`."""
+def transport_glyph(name, x, y, h=8):
+    """A transport sign `h` high as whole triangles, bars and squares, its top left at `x`, `y`; and its width."""
+    t, d = h // 4, h - 1 - (8 - h) // 2  # a bar's thickness; a triangle's depth: 7 at 8 high, 4 at 6
+    p = (h + 1) // 3  # a pause bar's width
+
+    def right(x0):  # a triangle pointing right, its base at x0
+        return f"M{x0} {y}L{x0 + d} {y + h // 2}L{x0} {y + h}Z"
+
+    def left(x1):  # pointing left, its base at x1
+        return f"M{x1} {y}L{x1 - d} {y + h // 2}L{x1} {y + h}Z"
+
+    def bar(x0, w, y0=y, bh=h):
+        return f"M{x0} {y0}h{w}v{bh}h{-w}z"
+
+    e = h - t - 1  # eject's triangle's height
     shapes = {
-        "previous": f"M{x + 6} {y + 5}h2v8h-2zM{x + 16} {y + 5}V{y + 13}L{x + 9} {y + 9}Z",
-        "play": f"M{x + 8} {y + 4}L{x + 16} {y + 9}L{x + 8} {y + 14}Z",
-        "pause": f"M{x + 7} {y + 5}h3v8h-3zM{x + 13} {y + 5}h3v8h-3z",
-        "stop": f"M{x + 7} {y + 5}h8v8h-8z",
-        "next": f"M{x + 6} {y + 5}V{y + 13}L{x + 13} {y + 9}ZM{x + 14} {y + 5}h2v8h-2z",
-        "eject": f"M{x + 6} {y + 9}L{x + 11} {y + 4}L{x + 16} {y + 9}ZM{x + 6} {y + 10}h10v2h-10z",
+        "previous": (bar(x, t) + left(x + t + 1 + d), t + 1 + d),
+        "play": (right(x), d),
+        "pause": (bar(x, p) + bar(x + h - p, p), h),
+        "stop": (bar(x, h), h),
+        "next": (right(x) + bar(x + d + 1, t), t + 1 + d),
+        "eject": (f"M{x} {y + e}L{x + e} {y}L{x + 2 * e} {y + e}Z" + bar(x, 2 * e, y + e + 1, t), 2 * e),
     }
     return shapes[name]
+
+
+def sign(p, name, x, y, w, h, size):
+    """A transport sign `size` high in the middle of the `w` x `h` box at `x`, `y`."""
+    _, gw = transport_glyph(name, 0, 0, size)
+    p.path(transport_glyph(name, x + (w - gw) // 2, y + (h - size) // 2, size)[0], "ink")
 
 
 def cbuttons(p):
@@ -62,11 +81,11 @@ def cbuttons(p):
         for y, pressed in ((0, False), (18, True)):
             button(p, x, y, w, 18, pressed)
             d = press(pressed)
-            p.path(transport_glyph(name, x + d, y + d), "ink")
+            sign(p, name, x + d, y + d, w, 18, 8)
     for y, pressed in ((0, False), (16, True)):
         button(p, 114, y, 22, 16, pressed)
         d = press(pressed)
-        p.path(transport_glyph("eject", 114 + d, y + d), "ink")
+        sign(p, "eject", 114 + d, y + d, 22, 16, 8)
 
 
 # --- shufrep.svg: repeat, shuffle, EQ and PL ----------------------------------------------------------
@@ -115,15 +134,12 @@ def shade_pos(p, x, y):
 
 
 def mini_transport(p, x, y, w, h, eject=True):
-    """The small transport signs in a well: previous, play, pause, stop, next, eject."""
+    """The small transport signs in a well, 6 high, one to every 9 pixels: previous, play, pause, stop, next, eject."""
     well(p, x, y, w, h)
     signs = ("previous", "play", "pause", "stop", "next") + (("eject",) if eject else ())
-    s = 0.4  # the transport's signs at this scale
+    x0 = x + (w - 9 * len(signs)) // 2
     for i, name in enumerate(signs):
-        cx = x + 2 + 9 * i
-        p.body.append(f'<g transform="translate({cx - 6 * s + 2} {y + h / 2 - 9 * s}) scale({s})">')
-        p.path(transport_glyph(name, 0, 0), "ink")
-        p.body.append("</g>")
+        sign(p, name, x0 + 9 * i, y, 9, h, 6)
 
 
 def shade_strip(p, y, focused):
