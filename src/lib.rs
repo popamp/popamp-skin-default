@@ -23,7 +23,11 @@ pub const FILES: &[(&str, &[u8])] = files!(
     "posbar.svg",
     "eqmain.svg",
     "eq_ex.svg",
-    "pledit.svg"
+    "pledit.svg",
+    "bar/left.svg",
+    "bar/mid.svg",
+    "bar/right.svg",
+    "ml/title.svg"
 );
 
 #[cfg(test)]
@@ -34,9 +38,11 @@ mod tests {
     /// from the player.
     #[test]
     fn every_picture_in_the_folder_is_listed() {
-        let mut on_disk: Vec<String> = std::fs::read_dir(env!("CARGO_MANIFEST_DIR"))
-            .unwrap()
-            .map(|e| e.unwrap().file_name().to_string_lossy().into_owned())
+        let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR"));
+        let mut on_disk: Vec<String> = ["", "bar", "ml"]
+            .iter()
+            .flat_map(|dir| std::fs::read_dir(root.join(dir)).unwrap().map(move |e| (dir, e.unwrap().file_name())))
+            .map(|(dir, name)| std::path::Path::new(dir).join(name).to_string_lossy().into_owned())
             .filter(|n| n.ends_with(".svg") || n == "skin.toml")
             .collect();
         let mut listed: Vec<String> = FILES.iter().map(|(n, _)| n.to_string()).collect();

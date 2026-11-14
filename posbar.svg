@@ -9,9 +9,9 @@
 <stop offset="0.95" stop-color="#f2a93b"/>
 </linearGradient>
 </defs>
-<rect x="0" y="0" width="307" height="10" fill="#262b38"/>
-<rect x="0" y="0" width="248" height="10" fill="#12151c"/>
-<path d="M0 9H247V0H248V10H0z" fill="#3b4358"/>
+<rect class="metal-262b38" x="0" y="0" width="307" height="10" fill="#262b38"/>
+<rect class="metal-12151c" x="0" y="0" width="248" height="10" fill="#12151c"/>
+<path class="metal-3b4358" d="M0 9H247V0H248V10H0z" fill="#3b4358"/>
 <rect x="2" y="5" width="244" height="1" fill="#153629"/>
 <rect x="248" y="0" width="29" height="10" fill="url(#g0)"/>
 <path d="M248 0H277V1H249V10H248z" fill="#edc384"/>

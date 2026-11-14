@@ -36,3 +36,501 @@ colors = [
     "#67db93", "#52e3a0", "#e6eaf2", "#c1e8de",
     "#9ce7c9", "#77e5b5", "#52e3a0", "#e6eaf2",
 ]
+
+# --- written by tools/extras.py from here on ---
+
+[colors.Slate]
+metal-12151c = "#12151c"
+metal-1c202a = "#1c202a"
+metal-25282f = "#25282f"
+metal-262b38 = "#262b38"
+metal-2a2e36 = "#2a2e36"
+metal-292f3c = "#292f3c"
+metal-2a334b = "#2a334b"
+metal-3a3e48 = "#3a3e48"
+metal-394052 = "#394052"
+metal-3b4358 = "#3b4358"
+metal-354363 = "#354363"
+metal-545862 = "#545862"
+metal-5d6477 = "#5d6477"
+metal-5d6780 = "#5d6780"
+metal-4d6293 = "#4d6293"
+metal-666d7f = "#666d7f"
+metal-6e727b = "#6e727b"
+metal-868b95 = "#868b95"
+metal-868ea2 = "#868ea2"
+metal-7b8bb0 = "#7b8bb0"
+metal-8d95a8 = "#8d95a8"
+metal-999ea8 = "#999ea8"
+metal-929fbe = "#929fbe"
+metal-a3aaba = "#a3aaba"
+metal-a9afba = "#a9afba"
+metal-acb1ba = "#acb1ba"
+metal-c0c4cd = "#c0c4cd"
+
+[colors.Graphite]
+metal-12151c = "#161718"
+metal-1c202a = "#222324"
+metal-25282f = "#292a2b"
+metal-262b38 = "#2e2f30"
+metal-2a2e36 = "#2f3031"
+metal-292f3c = "#313234"
+metal-2a334b = "#393a3c"
+metal-3a3e48 = "#3f4043"
+metal-394052 = "#434548"
+metal-3b4358 = "#47494c"
+metal-354363 = "#4a4b4e"
+metal-545862 = "#585a5e"
+metal-5d6477 = "#67696d"
+metal-5d6780 = "#6b6d72"
+metal-4d6293 = "#6d6f73"
+metal-666d7f = "#6f7176"
+metal-6e727b = "#717378"
+metal-868b95 = "#8a8c91"
+metal-868ea2 = "#919397"
+metal-7b8bb0 = "#929499"
+metal-8d95a8 = "#97999e"
+metal-999ea8 = "#9ea0a3"
+metal-929fbe = "#a5a7ab"
+metal-a3aaba = "#acaeb1"
+metal-a9afba = "#afb1b4"
+metal-acb1ba = "#b1b2b5"
+metal-c0c4cd = "#c5c6c8"
+
+[colors.Plum]
+metal-12151c = "#1a121c"
+metal-1c202a = "#271c2a"
+metal-25282f = "#2d252f"
+metal-262b38 = "#342638"
+metal-2a2e36 = "#332a36"
+metal-292f3c = "#37293c"
+metal-2a334b = "#432a4b"
+metal-3a3e48 = "#443a48"
+metal-394052 = "#4c3952"
+metal-3b4358 = "#513b58"
+metal-354363 = "#583563"
+metal-545862 = "#5e5462"
+metal-5d6477 = "#705d77"
+metal-5d6780 = "#775d80"
+metal-4d6293 = "#824d93"
+metal-666d7f = "#79667f"
+metal-6e727b = "#786e7b"
+metal-868b95 = "#918695"
+metal-868ea2 = "#9b86a2"
+metal-7b8bb0 = "#a37bb0"
+metal-8d95a8 = "#a18da8"
+metal-999ea8 = "#a499a8"
+metal-929fbe = "#b392be"
+metal-a3aaba = "#b4a3ba"
+metal-a9afba = "#b6a9ba"
+metal-acb1ba = "#b6acba"
+metal-c0c4cd = "#cac0cd"
+
+[colors.Pine]
+metal-12151c = "#121b19"
+metal-1c202a = "#1d2926"
+metal-25282f = "#262f2c"
+metal-262b38 = "#273733"
+metal-2a2e36 = "#2b3533"
+metal-292f3c = "#2a3b37"
+metal-2a334b = "#2c4942"
+metal-3a3e48 = "#3b4744"
+metal-394052 = "#3a514b"
+metal-3b4358 = "#3c5750"
+metal-354363 = "#376156"
+metal-545862 = "#55615e"
+metal-5d6477 = "#5e7670"
+metal-5d6780 = "#5f7e76"
+metal-4d6293 = "#509080"
+metal-666d7f = "#677e78"
+metal-6e727b = "#6f7a77"
+metal-868b95 = "#879491"
+metal-868ea2 = "#87a19a"
+metal-7b8bb0 = "#7eada1"
+metal-8d95a8 = "#8ea7a1"
+metal-999ea8 = "#9aa7a4"
+metal-929fbe = "#94bcb2"
+metal-a3aaba = "#a4b9b4"
+metal-a9afba = "#aab9b5"
+metal-acb1ba = "#adb9b6"
+metal-c0c4cd = "#c1ccc9"
+
+[colors.Wine]
+metal-12151c = "#1c1214"
+metal-1c202a = "#2a1c20"
+metal-25282f = "#2f2528"
+metal-262b38 = "#38262a"
+metal-2a2e36 = "#362a2d"
+metal-292f3c = "#3c292e"
+metal-2a334b = "#4b2a32"
+metal-3a3e48 = "#483a3d"
+metal-394052 = "#52393f"
+metal-3b4358 = "#583b42"
+metal-354363 = "#633540"
+metal-545862 = "#625458"
+metal-5d6477 = "#775d63"
+metal-5d6780 = "#805d66"
+metal-4d6293 = "#934d5e"
+metal-666d7f = "#7f666c"
+metal-6e727b = "#7b6e71"
+metal-868b95 = "#95868a"
+metal-868ea2 = "#a2868d"
+metal-7b8bb0 = "#b07b88"
+metal-8d95a8 = "#a88d94"
+metal-999ea8 = "#a8999d"
+metal-929fbe = "#be929d"
+metal-a3aaba = "#baa3a9"
+metal-a9afba = "#baa9ad"
+metal-acb1ba = "#baacb0"
+metal-c0c4cd = "#cdc0c3"
+
+[[window]]
+key = "main"
+
+[window.bar]
+edge = "bottom"
+size = [640, 22]
+
+[[window.bar.element]]
+type = "image"
+rect = [0, 0, 315, 22]
+normal = "bar/left.svg"
+
+[[window.bar.element]]
+type = "image"
+edges = [315, 0, "end-223", 22]
+normal = "bar/mid.svg"
+fill = "tile"
+
+[[window.bar.element]]
+type = "image"
+edges = ["end-223", 0, "end", 22]
+normal = "bar/right.svg"
+
+[[window.bar.element]]
+type = "button"
+rect = [3, 6, 9, 9]
+normal = { file = "titlebar.svg", area = [0, 0, 9, 9] }
+pressed = { file = "titlebar.svg", area = [0, 9, 9, 9] }
+menu_press = "main"
+cursor = "mainmenu"
+tip = "Main Menu"
+
+[[window.bar.element]]
+type = "button"
+rect = [15, 2, 23, 18]
+normal = { file = "cbuttons.svg", area = [0, 0, 23, 18] }
+pressed = { file = "cbuttons.svg", area = [0, 18, 23, 18] }
+click = "previous"
+shift = "back5s"
+ctrl = "start-of-list"
+menu = "previous"
+tip = "Previous"
+
+[[window.bar.element]]
+type = "button"
+rect = [38, 2, 23, 18]
+normal = { file = "cbuttons.svg", area = [23, 0, 23, 18] }
+pressed = { file = "cbuttons.svg", area = [23, 18, 23, 18] }
+click = "play"
+shift = "open-file"
+ctrl = "open-url"
+menu = "play"
+tip = "Play"
+
+[[window.bar.element]]
+type = "button"
+rect = [61, 2, 23, 18]
+normal = { file = "cbuttons.svg", area = [46, 0, 23, 18] }
+pressed = { file = "cbuttons.svg", area = [46, 18, 23, 18] }
+click = "pause"
+menu = "pause"
+tip = "Pause"
+
+[[window.bar.element]]
+type = "button"
+rect = [84, 2, 23, 18]
+normal = { file = "cbuttons.svg", area = [69, 0, 23, 18] }
+pressed = { file = "cbuttons.svg", area = [69, 18, 23, 18] }
+click = "stop"
+shift = "stop-fadeout"
+ctrl = "stop-after-current"
+menu = "stop"
+tip = "Stop"
+
+[[window.bar.element]]
+type = "button"
+rect = [107, 2, 22, 18]
+normal = { file = "cbuttons.svg", area = [92, 0, 22, 18] }
+pressed = { file = "cbuttons.svg", area = [92, 18, 22, 18] }
+click = "next"
+shift = "fwd5s"
+ctrl = "end-of-list"
+menu = "next"
+tip = "Next"
+
+[[window.bar.element]]
+type = "button"
+rect = [133, 3, 22, 16]
+normal = { file = "cbuttons.svg", area = [114, 0, 22, 16] }
+pressed = { file = "cbuttons.svg", area = [114, 16, 22, 16] }
+click = "open-file"
+shift = "open-folder"
+ctrl = "open-url"
+menu = "eject"
+tip = "Open"
+
+[[window.bar.element]]
+type = "image"
+rect = [162, 6, 9, 9]
+normal = { file = "playpaus.svg", area = [0, 0, 9, 9] }
+show = "playing"
+
+[[window.bar.element]]
+type = "image"
+rect = [162, 6, 9, 9]
+normal = { file = "playpaus.svg", area = [9, 0, 9, 9] }
+show = "paused"
+
+[[window.bar.element]]
+type = "image"
+rect = [162, 6, 9, 9]
+normal = { file = "playpaus.svg", area = [18, 0, 9, 9] }
+show = "stopped"
+
+[[window.bar.element]]
+type = "clock"
+rect = [168, 4, 63, 13]
+hide = "stopped"
+
+[[window.bar.element]]
+type = "button"
+rect = [168, 4, 63, 13]
+press = "toggle-time-mode"
+menu = "time"
+
+[[window.bar.element]]
+type = "vis"
+rect = [235, 3, 76, 16]
+
+[[window.bar.element]]
+type = "button"
+rect = [235, 3, 76, 16]
+press = "cycle-vis-mode"
+menu = "vis"
+
+[[window.bar.element]]
+type = "marquee"
+edges = [318, 3, "end-226", 9]
+double = "file-info"
+cursor = "songname"
+tip = "Song Title (right-click for options)"
+menu = "song-title"
+
+[[window.bar.element]]
+type = "slider"
+edges = [315, 10, "end-223", 20]
+value = "position"
+thumb = { normal = { file = "posbar.svg", area = [248, 0, 29, 10] }, pressed = { file = "posbar.svg", area = [278, 0, 29, 10] } }
+thumb_len = 29
+live = false
+show = "seekable"
+cursor = "posbar"
+menu = "seek"
+
+[[window.bar.element]]
+type = "slider"
+edges = ["end-214", 4, "end-146", 17]
+value = "volume"
+track = { file = "volume.svg", first = [0, 0, 68, 13], step = [0, 15], count = 28 }
+thumb = { normal = { file = "volume.svg", area = [15, 422, 14, 11], offset = [0, 1] }, pressed = { file = "volume.svg", area = [0, 422, 14, 11], offset = [0, 1] } }
+thumb_len = 14
+reset = 200
+wheel_step = 8
+cursor = "volbal"
+tip = "Volume"
+
+[[window.bar.element]]
+type = "toggle"
+edges = ["end-141", 5, "end-118", 17]
+normal = { file = "shufrep.svg", area = [0, 61, 23, 12] }
+pressed = { file = "shufrep.svg", area = [46, 61, 23, 12] }
+on = { file = "shufrep.svg", area = [0, 73, 23, 12] }
+on_pressed = { file = "shufrep.svg", area = [46, 73, 23, 12] }
+flag = "eq-window"
+click = "toggle-eq-window"
+
+[[window.bar.element]]
+type = "toggle"
+edges = ["end-117", 5, "end-94", 17]
+normal = { file = "shufrep.svg", area = [23, 61, 23, 12] }
+pressed = { file = "shufrep.svg", area = [69, 61, 23, 12] }
+on = { file = "shufrep.svg", area = [23, 73, 23, 12] }
+on_pressed = { file = "shufrep.svg", area = [69, 73, 23, 12] }
+flag = "playlist-window"
+click = "toggle-playlist-window"
+
+[[window.bar.element]]
+type = "toggle"
+edges = ["end-90", 3, "end-43", 18]
+normal = { file = "shufrep.svg", area = [28, 0, 47, 15] }
+pressed = { file = "shufrep.svg", area = [28, 15, 47, 15] }
+on = { file = "shufrep.svg", area = [28, 30, 47, 15] }
+on_pressed = { file = "shufrep.svg", area = [28, 45, 47, 15] }
+flag = "shuffle"
+click = "toggle-shuffle"
+menu = "shuffle"
+
+[[window.bar.element]]
+type = "toggle"
+edges = ["end-43", 3, "end-15", 18]
+normal = { file = "shufrep.svg", area = [0, 0, 28, 15] }
+pressed = { file = "shufrep.svg", area = [0, 15, 28, 15] }
+on = { file = "shufrep.svg", area = [0, 30, 28, 15] }
+on_pressed = { file = "shufrep.svg", area = [0, 45, 28, 15] }
+flag = "repeat"
+click = "toggle-repeat"
+menu = "repeat"
+
+[[window.bar.element]]
+type = "button"
+edges = ["end-12", 6, "end-3", 15]
+normal = { file = "titlebar.svg", area = [18, 0, 9, 9] }
+pressed = { file = "titlebar.svg", area = [18, 9, 9, 9] }
+click = "exit"
+tip = "Close"
+
+[[window]]
+key = "library"
+placement = "docked"
+empty_press = "nothing"
+wheel_scrolls_list = true
+
+[window.normal]
+size = [275, 116]
+resize_step = [25, 29]
+cursor = "pnormal"
+
+[[window.normal.element]]
+type = "image"
+rect = [0, 0, 25, 20]
+normal = { file = "pledit.svg", area = [0, 0, 25, 20] }
+inactive = { file = "pledit.svg", area = [0, 21, 25, 20] }
+
+[[window.normal.element]]
+type = "image"
+edges = [25, 0, "end-25", 20]
+normal = { file = "pledit.svg", area = [127, 0, 25, 20] }
+inactive = { file = "pledit.svg", area = [127, 21, 25, 20] }
+fill = "tile"
+
+[[window.normal.element]]
+type = "image"
+edges = ["end-25", 0, "end", 20]
+normal = { file = "pledit.svg", area = [153, 0, 25, 20] }
+inactive = { file = "pledit.svg", area = [153, 21, 25, 20] }
+
+[[window.normal.element]]
+type = "image"
+edges = ["center-50", 0, "center+50", 20]
+normal = { file = "ml/title.svg", area = [0, 0, 100, 20] }
+inactive = { file = "ml/title.svg", area = [0, 21, 100, 20] }
+
+[[window.normal.element]]
+type = "image"
+edges = [0, 20, 12, "end-38"]
+normal = { file = "pledit.svg", area = [0, 42, 12, 29] }
+fill = "tile"
+
+[[window.normal.element]]
+type = "image"
+edges = ["end-20", 20, "end", "end-38"]
+normal = { file = "pledit.svg", area = [31, 42, 20, 29] }
+fill = "tile"
+
+[[window.normal.element]]
+type = "image"
+edges = [12, "end-38", "end-150", "end"]
+normal = { file = "pledit.svg", area = [179, 0, 25, 38] }
+fill = "tile"
+
+[[window.normal.element]]
+type = "image"
+edges = [0, "end-38", 12, "end"]
+normal = { file = "pledit.svg", area = [0, 72, 12, 38] }
+
+[[window.normal.element]]
+type = "image"
+edges = ["end-150", "end-38", "end", "end"]
+normal = { file = "pledit.svg", area = [126, 72, 150, 38] }
+
+[[window.normal.element]]
+type = "drag"
+edges = [0, 0, "end", 20]
+cursor = "ptbar"
+
+[[window.normal.element]]
+type = "button"
+edges = ["end-11", 3, "end-2", 12]
+pressed = { file = "pledit.svg", area = [52, 42, 9, 9] }
+click = "toggle-library-window"
+cursor = "pclose"
+tip = "Close"
+
+[[window.normal.element]]
+type = "library"
+edges = [12, 20, "end-7", "end-38"]
+menu = "library"
+thumb = { normal = { file = "pledit.svg", area = [52, 53, 8, 18] }, pressed = { file = "pledit.svg", area = [61, 53, 8, 18] } }
+
+[[window.normal.element]]
+type = "text"
+edges = ["end-143", "end-28", "end-58", "end-22"]
+text = "library-status"
+
+[[window.normal.element]]
+type = "text"
+edges = ["end-82", "end-14", "end-52", "end-8"]
+text = "playlist-clock"
+hide = "stopped"
+
+[[window.normal.element]]
+type = "button"
+edges = ["end-145", "end-16", "end-137", "end-9"]
+click = "previous"
+
+[[window.normal.element]]
+type = "button"
+edges = ["end-136", "end-16", "end-128", "end-9"]
+click = "play"
+
+[[window.normal.element]]
+type = "button"
+edges = ["end-127", "end-16", "end-119", "end-9"]
+click = "pause"
+
+[[window.normal.element]]
+type = "button"
+edges = ["end-118", "end-16", "end-110", "end-9"]
+click = "stop"
+
+[[window.normal.element]]
+type = "button"
+edges = ["end-109", "end-16", "end-101", "end-9"]
+click = "next"
+
+[[window.normal.element]]
+type = "button"
+edges = ["end-100", "end-16", "end-91", "end-9"]
+click = "open-file"
+
+[[window.normal.element]]
+type = "button"
+edges = ["end-44", "end-29", "end-22", "end-14"]
+menu_release = "library"
+tip = "Library Menu"
+
+[[window.normal.element]]
+type = "resize"
+edges = ["end-20", "end-20", "end", "end"]
+cursor = "psize"

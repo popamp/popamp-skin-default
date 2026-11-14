@@ -11,4 +11,4 @@ homepage = "https://github.com/popamp/popamp"
 keywords = ["popamp", "skin"]
 categories = ["multimedia::audio"]
 # What the player compiles in; the preview picture is not part of it.
-include = ["Cargo.toml", "src/**", "skin.toml", "*.svg", "README.md", "LICENSE-*"]
+include = ["Cargo.toml", "src/**", "skin.toml", "*.svg", "bar/*.svg", "ml/*.svg", "README.md", "LICENSE-*"]
