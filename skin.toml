@@ -4,6 +4,7 @@
 name = "Popamp Default"
 author = "Popamp"
 format_version = 1
+min_popamp = "1.0.0"
 
 [colors.Slate]
 shadow = "#12151c"

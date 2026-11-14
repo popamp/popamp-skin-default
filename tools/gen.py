@@ -44,6 +44,7 @@ META = """\
 name = "Popamp Default"
 author = "Popamp"
 format_version = 1
+min_popamp = "1.0.0"
 """
 
 PLAYLIST = {"normal": "#52e3a0", "current": "#e6eaf2", "normal_bg": "#06090d", "selected_bg": "#233a6b"}

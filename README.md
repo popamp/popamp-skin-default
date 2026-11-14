@@ -24,7 +24,7 @@ one set of title buttons, where only the window's name differs, one kind
 of button, well and thumb. `text.svg` and `numbers.svg`, the lettering,
 are drawn by hand and the script reads its letters from `text.svg`.
 
-![Popamp Default: main window, equalizer and playlist](preview.png)
+![Popamp Default: main window, equalizer and playlist in every colour set, and the bar below](preview.png)
 
 A vector skin for [Popamp](https://github.com/popamp/popamp), skin format
 version 1. All artwork is the skin's own.
