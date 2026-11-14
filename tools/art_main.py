@@ -1,0 +1,225 @@
+"""The main window's sheets."""
+from parts import (BOX, CELL_H, button, centred, letters, lettered_button, level_colour, press, rule, thumb, title_button, title_strip,
+                   strip_ground, well, window)
+
+NAME = "POPAMP"
+
+# --- main.svg ------------------------------------------------------------------------------------------
+
+DISPLAY = (8, 20, 97, 43)  # the clock, the vis and the clutterbar
+MARQUEE = (108, 22, 161, 17)
+KBPS, KHZ = (108, 40, 22, 13), (153, 40, 17, 13)
+MONOSTER = (210, 39, 59, 17)
+LOGO = (249, 90, 17, 16)
+RULES = (68, 85)  # the grooves above and below the position bar
+COLON = (72, (30, 35))  # the clock's colon: x, rows
+
+
+def logo(p, x, y):
+    """Popamp's little spectrum in its well: five bars, green to amber."""
+    for i, h in enumerate((5, 9, 12, 7, 10)):
+        p.rect(x + 2 + 3 * i, y + 13 - h, 2, h, level_colour(4 + 5 * i))
+
+
+def main(p):
+    window(p, 0, 0, 275, 116)
+    title_strip(p, 0, 0, 275, NAME, True, ("min", "shade", "close"), menu=True)
+    well(p, *DISPLAY)
+    x, rows = COLON
+    for y in rows:
+        p.rect(x, y, 2, 2, "green")
+    for w in (MARQUEE, KBPS, KHZ, MONOSTER):
+        well(p, *w)
+    letters(p, "KBPS", KBPS[0] + KBPS[2] + 1, 43, "label")
+    letters(p, "KHZ", KHZ[0] + KHZ[2] + 1, 43, "label")
+    for y in RULES:
+        rule(p, 8, y, 260)
+    well(p, *LOGO)
+    logo(p, LOGO[0], LOGO[1] + 1)
+
+
+# --- cbuttons.svg: the transport ----------------------------------------------------------------------
+
+TRANSPORT = (("previous", 0, 23), ("play", 23, 23), ("pause", 46, 23), ("stop", 69, 23), ("next", 92, 22))
+
+
+def transport_glyph(name, x, y):
+    """A transport button's sign as one outline, in a 23 x 18 button at `x`, `y`."""
+    shapes = {
+        "previous": f"M{x + 6} {y + 5}h2v8h-2zM{x + 16} {y + 5}V{y + 13}L{x + 9} {y + 9}Z",
+        "play": f"M{x + 8} {y + 4}L{x + 16} {y + 9}L{x + 8} {y + 14}Z",
+        "pause": f"M{x + 7} {y + 5}h3v8h-3zM{x + 13} {y + 5}h3v8h-3z",
+        "stop": f"M{x + 7} {y + 5}h8v8h-8z",
+        "next": f"M{x + 6} {y + 5}V{y + 13}L{x + 13} {y + 9}ZM{x + 14} {y + 5}h2v8h-2z",
+        "eject": f"M{x + 6} {y + 9}L{x + 11} {y + 4}L{x + 16} {y + 9}ZM{x + 6} {y + 10}h10v2h-10z",
+    }
+    return shapes[name]
+
+
+def cbuttons(p):
+    p.rect(0, 0, 136, 36, "base")
+    for name, x, w in TRANSPORT:
+        for y, pressed in ((0, False), (18, True)):
+            button(p, x, y, w, 18, pressed)
+            d = press(pressed)
+            p.path(transport_glyph(name, x + d, y + d), "ink")
+    for y, pressed in ((0, False), (16, True)):
+        button(p, 114, y, 22, 16, pressed)
+        d = press(pressed)
+        p.path(transport_glyph("eject", 114 + d, y + d), "ink")
+
+
+# --- shufrep.svg: repeat, shuffle, EQ and PL ----------------------------------------------------------
+
+STATES = ((False, False), (False, True), (True, False), (True, True))  # off, off pressed, on, on pressed
+
+
+def shufrep(p):
+    p.rect(0, 0, 92, 85, "base")
+    for row, (on, pressed) in enumerate(STATES):
+        lettered_button(p, 0, 15 * row, 28, 15, "REP", pressed, on)
+        lettered_button(p, 28, 15 * row, 47, 15, "SHUFFLE", pressed, on)
+    for x0, pressed in ((0, False), (46, True)):
+        for y, on in ((61, False), (73, True)):
+            lettered_button(p, x0, y, 23, 12, "EQ", pressed, on)
+            lettered_button(p, x0 + 23, y, 23, 12, "PL", pressed, on)
+
+
+# --- titlebar.svg: the title strips, their buttons and the clutterbar ----------------------------------
+
+X0 = 27  # the strips' left in the sheet
+CLUTTER = "OAIDV"
+CLUTTER_AT = (3, 11, 18, 25, 33)  # each letter's place down the bar
+CLUTTER_LIT = ((304, 47, 8, 8), (312, 55, 8, 7), (320, 62, 8, 7), (328, 69, 8, 8), (336, 77, 8, 7))
+SHADE_TIME = (127, 2, 31, 10)  # the shaded window's clock well, mini transport and position bar
+SHADE_TRANSPORT = (167, 2, 59, 10)
+SHADE_POS = (226, 4, 17, 7)
+
+
+def loose_buttons(p):
+    """The buttons the player lays over the strips: normal in the top row, pressed below."""
+    for x, y, glyph in ((0, 0, "menu"), (9, 0, "min"), (18, 0, "close")):
+        title_button(p, x, y, glyph)
+        title_button(p, x, y + BOX, glyph, True)
+    for y, glyph in ((18, "shade"), (27, "unshade")):
+        title_button(p, 0, y, glyph)
+        title_button(p, 9, y, glyph, True)
+    shade_pos(p, 0, 36)
+    thumb(p, 20, 36, 3, 7)
+
+
+def shade_pos(p, x, y):
+    """The shaded window's little position bar: a groove in a well."""
+    well(p, x, y, 17, 7)
+    p.rect(x + 1, y + 3, 15, 1, "green-dim")
+
+
+def mini_transport(p, x, y, w, h, eject=True):
+    """The small transport signs in a well: previous, play, pause, stop, next, eject."""
+    well(p, x, y, w, h)
+    signs = ("previous", "play", "pause", "stop", "next") + (("eject",) if eject else ())
+    s = 0.4  # the transport's signs at this scale
+    for i, name in enumerate(signs):
+        cx = x + 2 + 9 * i
+        p.body.append(f'<g transform="translate({cx - 6 * s + 2} {y + h / 2 - 9 * s}) scale({s})">')
+        p.path(transport_glyph(name, 0, 0), "ink")
+        p.body.append("</g>")
+
+
+def shade_strip(p, y, focused):
+    strip_ground(p, X0, y, 275, focused, left=True, right=True)
+    title_button(p, X0 + 6, y + 3, "menu")
+    letters(p, NAME, X0 + 20, y + 4, "ink" if focused else "dull-ink")
+    well(p, X0 + SHADE_TIME[0], y + SHADE_TIME[1], *SHADE_TIME[2:])
+    p.rect(X0 + 144, y + 5, 1, 1, "green")
+    p.rect(X0 + 144, y + 7, 1, 1, "green")
+    mini_transport(p, X0 + SHADE_TRANSPORT[0], y + SHADE_TRANSPORT[1], *SHADE_TRANSPORT[2:])
+    shade_pos(p, X0 + SHADE_POS[0], y + SHADE_POS[1])
+    for x, glyph in ((244, "min"), (254, "unshade"), (264, "close")):
+        title_button(p, X0 + x, y + 3, glyph)
+
+
+def clutter_letter(p, x, y, i, lit):
+    centred(p, CLUTTER[i], x, y, 8, "green" if lit else "green-dim")
+
+
+def clutterbar(p):
+    p.rect(304, 0, 8, 43, "lcd")
+    for i, at in enumerate(CLUTTER_AT):
+        clutter_letter(p, 304, at + (7 - CELL_H) // 2, i, False)
+    for i, (x, y, w, h) in enumerate(CLUTTER_LIT):
+        p.rect(x, y, w, h, "lcd")
+        clutter_letter(p, x, y + (h - CELL_H) // 2, i, True)
+
+
+def titlebar(p):
+    p.rect(0, 0, 344, 87, "base")
+    loose_buttons(p)
+    for y, focused in ((0, True), (15, False), (57, True), (72, False)):  # the last two: the classic sheet's spare pair
+        title_strip(p, X0, y, 275, NAME, focused, ("min", "shade", "close"), menu=True)
+    shade_strip(p, 29, True)
+    shade_strip(p, 42, False)
+    clutterbar(p)
+
+
+# --- the sliders ---------------------------------------------------------------------------------------
+
+
+def posbar(p):
+    p.rect(0, 0, 307, 10, "body")
+    well(p, 0, 3, 248, 4)
+    p.rect(1, 4, 246, 2, "green-dim")
+    thumb(p, 248, 0, 29, 10)
+    thumb(p, 278, 0, 29, 10, True)
+
+
+FRAMES, STEP = 28, 15
+
+
+def track(p, x, y, w, k, centre=False):
+    """One frame of the volume or balance track: a well with the level in it, from the left or from the middle."""
+    p.rect(x, y, w, 13, "body")
+    well(p, x, y + 4, w, 5)
+    inside = w - 2
+    n = round(inside * k / (FRAMES - 1))
+    if centre:
+        n = round(inside * k / (FRAMES - 1) / 2) * 2
+        p.rect(x + 1 + (inside - n) // 2, y + 5, n, 3, level_colour(k))
+    else:
+        p.rect(x + 1, y + 5, n, 3, level_colour(k))
+
+
+def slider_sheet(p, x, w, centre):
+    p.rect(0, 0, 68, 433, "base")
+    for k in range(FRAMES):
+        track(p, x, STEP * k, w, k, centre)
+    thumb(p, 15, 422, 14, 11)
+    thumb(p, 0, 422, 14, 11, True)
+
+
+def volume(p):
+    slider_sheet(p, 0, 68, False)
+
+
+def balance(p):
+    slider_sheet(p, 9, 38, True)
+
+
+# --- the display's indicators --------------------------------------------------------------------------
+
+
+def monoster(p):
+    p.rect(0, 0, 58, 24, "lcd")
+    for y, lit in ((0, True), (12, False)):
+        ink = "green" if lit else "green-dim"
+        centred(p, "STEREO", 0, y + 3, 29, ink)
+        centred(p, "MONO", 29, y + 3, 27, ink)
+
+
+def playpaus(p):
+    p.rect(0, 0, 42, 9, "lcd")
+    p.path("M2 1L7 4.5L2 8Z", "green")
+    p.path("M11 1h2v7h-2zM14 1h2v7h-2z", "amber")
+    p.rect(20, 2, 5, 5, "red")
+    p.rect(36, 0, 3, 9, "lcd")
+    p.rect(40, 2, 1, 5, "green")

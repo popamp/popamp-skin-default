@@ -12,6 +12,18 @@ skin takes what it leaves out. It draws every classic sheet in SVG, so it
 is also a complete example of the
 [vector skin format](https://github.com/popamp/popamp/blob/main/docs/skin-format.md).
 
+Besides the classic windows it has a bar view of the main window (the main
+menu's Toolbar mode), a media library window with its own title, and five
+colour sets for the metal (Slate, Graphite, Plum, Pine and Wine) in the
+main menu's Colours.
+
+The SVG files and `skin.toml` are written by `tools/gen.py`
+(`python3 -I -B tools/gen.py`). Every window is put together from the
+same parts in `tools/parts.py`: one panel and edge, one title strip with
+one set of title buttons, where only the window's name differs, one kind
+of button, well and thumb. `text.svg` and `numbers.svg`, the lettering,
+are drawn by hand and the script reads its letters from `text.svg`.
+
 ![Popamp Default: main window, equalizer and playlist](preview.png)
 
 A vector skin for [Popamp](https://github.com/popamp/popamp), skin format

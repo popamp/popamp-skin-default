@@ -1,22 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="41" viewBox="0 0 100 41">
 <defs>
-<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-<stop class="metal-4d6293-stop" offset="0.025" stop-color="#4d6293"/>
-<stop class="metal-2a334b-stop" offset="0.975" stop-color="#2a334b"/>
-</linearGradient>
-<linearGradient id="g7" x1="0" y1="0" x2="0" y2="1">
-<stop class="metal-3a3e48-stop" offset="0.025" stop-color="#3a3e48"/>
-<stop class="metal-25282f-stop" offset="0.975" stop-color="#25282f"/>
-</linearGradient>
+<linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4d6293" class="title-top-stop"/><stop offset="1" stop-color="#2a334b" class="title-bottom-stop"/></linearGradient>
+<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3e48" class="dull-top-stop"/><stop offset="1" stop-color="#25282f" class="dull-bottom-stop"/></linearGradient>
 </defs>
-<rect x="0" y="0" width="100" height="20" fill="url(#g1)"/>
-<rect class="metal-7b8bb0" x="0" y="0" width="100" height="1" fill="#7b8bb0"/>
-<rect class="metal-12151c" x="0" y="18" width="100" height="1" fill="#12151c"/>
-<rect class="metal-262b38" x="0" y="19" width="100" height="1" fill="#262b38"/>
-<rect x="0" y="21" width="100" height="20" fill="url(#g7)"/>
-<rect class="metal-6e727b" x="0" y="21" width="100" height="1" fill="#6e727b"/>
-<rect class="metal-12151c" x="0" y="39" width="100" height="1" fill="#12151c"/>
-<rect class="metal-262b38" x="0" y="40" width="100" height="1" fill="#262b38"/>
-<path d="M18 6H19V7H21V6H22V11H21V9H19V11H18zM23 6H27V7H24V8H26V9H24V10H27V11H23zM28 6H31V7H32V10H31V11H28zM29 7V10H31V7zM33 6H36V7H35V10H36V11H33V10H34V7H33zM38 7H39V8H41V7H42V11H41V9H39V11H38zM39 6H41V7H39zM48 6H49V10H52V11H48zM53 6H56V7H55V10H56V11H53V10H54V7H53zM58 6H61V7H62V8H61V9H62V10H61V11H58zM59 7V8H61V7zM59 9V10H61V9zM63 6H66V7H67V8H66V10H67V11H66V10H65V9H64V11H63zM64 7V8H66V7zM68 7H69V8H71V7H72V11H71V9H69V11H68zM69 6H71V7H69zM73 6H76V7H77V8H76V10H77V11H76V10H75V9H74V11H73zM74 7V8H76V7zM78 6H79V8H81V9H80V11H79V8H78zM81 6H82V8H81z" fill="#e6eaf2"/>
-<path class="metal-868b95" d="M18 27H19V28H21V27H22V32H21V30H19V32H18zM23 27H27V28H24V29H26V30H24V31H27V32H23zM28 27H31V28H32V31H31V32H28zM29 28V31H31V28zM33 27H36V28H35V31H36V32H33V31H34V28H33zM38 28H39V29H41V28H42V32H41V30H39V32H38zM39 27H41V28H39zM48 27H49V31H52V32H48zM53 27H56V28H55V31H56V32H53V31H54V28H53zM58 27H61V28H62V29H61V30H62V31H61V32H58zM59 28V29H61V28zM59 30V31H61V30zM63 27H66V28H67V29H66V31H67V32H66V31H65V30H64V32H63zM64 28V29H66V28zM68 28H69V29H71V28H72V32H71V30H69V32H68zM69 27H71V28H69zM73 27H76V28H77V29H76V31H77V32H76V31H75V30H74V32H73zM74 28V29H76V28zM78 27H79V29H81V30H80V32H79V29H78zM81 27H82V29H81z" fill="#868b95"/>
+<rect x="0" y="0" width="100" height="14" fill="url(#g0)"/>
+<rect x="0" y="0" width="100" height="1" fill="#7b8bb0" class="title-line"/>
+<rect x="0" y="13" width="100" height="1" fill="#12151c" class="shadow"/>
+<rect x="0" y="5" width="13" height="1" fill="#929fbe" class="title-rule"/>
+<rect x="0" y="8" width="13" height="1" fill="#929fbe" class="title-rule"/>
+<rect x="87" y="5" width="13" height="1" fill="#929fbe" class="title-rule"/>
+<rect x="87" y="8" width="13" height="1" fill="#929fbe" class="title-rule"/>
+<path d="M18 4H19V5H21V4H22V9H21V7H19V9H18zM23 4H27V5H24V6H26V7H24V8H27V9H23zM28 4H31V5H32V8H31V9H28zM29 5V8H31V5zM33 4H36V5H35V8H36V9H33V8H34V5H33zM38 5H39V6H41V5H42V9H41V7H39V9H38zM39 4H41V5H39zM48 4H49V8H52V9H48zM53 4H56V5H55V8H56V9H53V8H54V5H53zM58 4H61V5H62V6H61V7H62V8H61V9H58zM59 5V6H61V5zM59 7V8H61V7zM63 4H66V5H67V6H66V8H67V9H66V8H65V7H64V9H63zM64 5V6H66V5zM68 5H69V6H71V5H72V9H71V7H69V9H68zM69 4H71V5H69zM73 4H76V5H77V6H76V8H77V9H76V8H75V7H74V9H73zM74 5V6H76V5zM78 4H79V6H81V7H80V9H79V6H78zM81 4H82V6H81z" fill="#e6eaf2"/>
+<rect x="0" y="14" width="100" height="6" fill="#2f3545" class="body"/>
+<rect x="0" y="19" width="100" height="1" fill="#12151c" class="shadow"/>
+<rect x="0" y="21" width="100" height="14" fill="url(#g1)"/>
+<rect x="0" y="21" width="100" height="1" fill="#6e727b" class="dull-line"/>
+<rect x="0" y="34" width="100" height="1" fill="#12151c" class="shadow"/>
+<rect x="0" y="26" width="13" height="1" fill="#545862" class="dull-rule"/>
+<rect x="0" y="29" width="13" height="1" fill="#545862" class="dull-rule"/>
+<rect x="87" y="26" width="13" height="1" fill="#545862" class="dull-rule"/>
+<rect x="87" y="29" width="13" height="1" fill="#545862" class="dull-rule"/>
+<path d="M18 25H19V26H21V25H22V30H21V28H19V30H18zM23 25H27V26H24V27H26V28H24V29H27V30H23zM28 25H31V26H32V29H31V30H28zM29 26V29H31V26zM33 25H36V26H35V29H36V30H33V29H34V26H33zM38 26H39V27H41V26H42V30H41V28H39V30H38zM39 25H41V26H39zM48 25H49V29H52V30H48zM53 25H56V26H55V29H56V30H53V29H54V26H53zM58 25H61V26H62V27H61V28H62V29H61V30H58zM59 26V27H61V26zM59 28V29H61V28zM63 25H66V26H67V27H66V29H67V30H66V29H65V28H64V30H63zM64 26V27H66V26zM68 26H69V27H71V26H72V30H71V28H69V30H68zM69 25H71V26H69zM73 25H76V26H77V27H76V29H77V30H76V29H75V28H74V30H73zM74 26V27H76V26zM78 25H79V27H81V28H80V30H79V27H78zM81 25H82V27H81z" fill="#868b95" class="dull-ink"/>
+<rect x="0" y="35" width="100" height="6" fill="#2f3545" class="body"/>
+<rect x="0" y="40" width="100" height="1" fill="#12151c" class="shadow"/>
 </svg>

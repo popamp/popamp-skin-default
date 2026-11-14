@@ -1,22 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="307" height="10" viewBox="0 0 307 10">
 <defs>
-<linearGradient id="g0" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0.05" stop-color="#f2a93b"/>
-<stop offset="0.95" stop-color="#9c6214"/>
-</linearGradient>
-<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0.05" stop-color="#edc384"/>
-<stop offset="0.95" stop-color="#f2a93b"/>
-</linearGradient>
+<linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#edc384"/><stop offset="1" stop-color="#9c6214"/></linearGradient>
+<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2a93b"/><stop offset="1" stop-color="#9c6214"/></linearGradient>
 </defs>
-<rect class="metal-262b38" x="0" y="0" width="307" height="10" fill="#262b38"/>
-<rect class="metal-12151c" x="0" y="0" width="248" height="10" fill="#12151c"/>
-<path class="metal-3b4358" d="M0 9H247V0H248V10H0z" fill="#3b4358"/>
-<rect x="2" y="5" width="244" height="1" fill="#153629"/>
+<rect x="0" y="0" width="307" height="10" fill="#2f3545" class="body"/>
+<path d="M0 3H248V4H1V7H0Z" fill="#12151c" class="shadow"/>
+<path d="M247 4H248V7H1V6H247Z" fill="#3b4358" class="rim"/>
+<rect x="1" y="4" width="246" height="2" fill="#06090d"/>
+<rect x="1" y="4" width="246" height="2" fill="#1f5a42"/>
 <rect x="248" y="0" width="29" height="10" fill="url(#g0)"/>
-<path d="M248 0H277V1H249V10H248z" fill="#edc384"/>
-<path d="M248 9H276V0H277V10H248zM259 2H260V8H259zM262 2H263V8H262zM265 2H266V8H265z" fill="#9c6214"/>
+<path d="M248 0H277V1H249V10H248Z" fill="#edc384"/>
+<path d="M276 1H277V10H249V9H276Z" fill="#9c6214"/>
+<rect x="262" y="2" width="1" height="6" fill="#9c6214"/>
 <rect x="278" y="0" width="29" height="10" fill="url(#g1)"/>
-<path d="M278 0H307V1H279V10H278z" fill="#ead3b0"/>
-<path d="M278 9H306V0H307V10H278zM289 2H290V8H289zM292 2H293V8H292zM295 2H296V8H295z" fill="#9c6214"/>
+<path d="M278 0H307V1H279V10H278Z" fill="#f2a93b"/>
+<path d="M306 1H307V10H279V9H306Z" fill="#9c6214"/>
+<rect x="292" y="2" width="1" height="6" fill="#9c6214"/>
 </svg>
