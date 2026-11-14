@@ -27,6 +27,7 @@ pub const FILES: &[(&str, &[u8])] = files!(
     "bar/left.svg",
     "bar/mid.svg",
     "bar/right.svg",
+    "bar/controls.svg",
     "ml/title.svg"
 );
 

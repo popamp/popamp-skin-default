@@ -176,17 +176,18 @@ def posbar(p):
 FRAMES, STEP = 28, 15
 
 
-def track(p, x, y, w, k, centre=False):
-    """One frame of the volume or balance track: a well with the level in it, from the left or from the middle."""
-    p.rect(x, y, w, 13, "body")
-    well(p, x, y + 4, w, 5)
+def track(p, x, y, w, k, centre=False, h=13, well_h=5):
+    """One frame of the volume or balance track: a well across its middle with the level in it, from the left or from the middle."""
+    p.rect(x, y, w, h, "body")
+    top = y + (h - well_h) // 2
+    well(p, x, top, w, well_h)
     inside = w - 2
     n = round(inside * k / (FRAMES - 1))
     if centre:
         n = round(inside * k / (FRAMES - 1) / 2) * 2
-        p.rect(x + 1 + (inside - n) // 2, y + 5, n, 3, level_colour(k))
+        p.rect(x + 1 + (inside - n) // 2, top + 1, n, well_h - 2, level_colour(k))
     else:
-        p.rect(x + 1, y + 5, n, 3, level_colour(k))
+        p.rect(x + 1, top + 1, n, well_h - 2, level_colour(k))
 
 
 def slider_sheet(p, x, w, centre):

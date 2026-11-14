@@ -1,7 +1,8 @@
 """The windows skin.toml lays out itself: the main window's bar view and the media library."""
-from art_bar import BAR_H, BAR_LEFT, BAR_MIN, BAR_RIGHT, CLOCK, DISPLAY_X, THUMB_TOP
+from art_bar import (BAR_H, BAR_LEFT, BAR_MIN, BAR_RIGHT, BOX, CLOCK, DISPLAY_X, REPEAT, SHUFFLE, THUMB_TOP, TOGGLE_H, VOLUME_H,
+                     VOLUME_THUMB, VOLUME_TOP, VOLUME_W)
+from art_main import STATES
 from art_pl import PLATE_W
-from parts import BOX
 
 
 def toml(v):
@@ -34,24 +35,30 @@ def sprite(sheet, w, h, normal, pressed):
     return {"normal": area(sheet, *normal, w, h), "pressed": area(sheet, *pressed, w, h)}
 
 
-def toggle(states, w, h, at, flag, click, **more):
-    """A shufrep button: `states` are its off, off pressed, on and on pressed corners."""
+def toggle(sheet, states, w, h, at, flag, click, **more):
+    """A toggle: `states` are its off, off pressed, on and on pressed corners in `sheet`."""
     x, y = at
-    pics = {k: area("shufrep", sx, sy, w, h) for k, (sx, sy) in zip(("normal", "pressed", "on", "on_pressed"), states)}
+    pics = {k: area(sheet, sx, sy, w, h) for k, (sx, sy) in zip(("normal", "pressed", "on", "on_pressed"), states)}
     return element("toggle", (end(x), y, end(x + w), y + h), **pics, flag=flag, click=click, **more)
 
 
-TITLE_BUTTON = BOX  # the title bar's buttons: Main Menu at 0, Close at 18, pressed a row down
-BUTTON_INSET = 3
+GAP = 3  # between the bar's ends and Main Menu and Close, and between them and their neighbours
+TRANSPORT_X = GAP + BOX + GAP
+CONTROLS = "bar/controls"
+
+
+def middle(h):
+    """The row that puts something `h` high in the bar's middle."""
+    return (BAR_H - h) // 2
 
 
 def bar_window():
-    b, mid = TITLE_BUTTON, (BAR_H - TITLE_BUTTON) // 2
+    b, mid = BOX, middle(BOX)
     e = ["", "[[window]]", 'key = "main"', "", "[window.bar]", 'edge = "bottom"', f"size = [{BAR_MIN}, {BAR_H}]"]
     e += element("image", (0, 0, BAR_LEFT, BAR_H), normal="bar/left.svg")
     e += element("image", (BAR_LEFT, 0, end(0), BAR_H), normal="bar/mid.svg", fill="tile")
     e += element("image", (end(0), 0, "end", BAR_H), normal="bar/right.svg")
-    e += element("button", (BUTTON_INSET, mid, b, b), **sprite("titlebar", b, b, (0, 0), (0, b)),
+    e += element("button", (GAP, mid, b, b), **sprite(CONTROLS, b, b, (0, 0), (0, b)),
                  menu_press="main", cursor="mainmenu", tip="Main Menu")  # fmt: skip
     transport = (
         (0, 23, "previous", "Previous", {"shift": "back5s", "ctrl": "start-of-list", "menu": "previous"}),
@@ -61,33 +68,38 @@ def bar_window():
         (92, 22, "next", "Next", {"shift": "fwd5s", "ctrl": "end-of-list", "menu": "next"}),
     )
     for sx, w, click, tip, more in transport:
-        e += element("button", (15 + sx, 2, w, 18), **sprite("cbuttons", w, 18, (sx, 0), (sx, 18)), click=click, **more, tip=tip)
-    e += element("button", (133, 3, 22, 16), **sprite("cbuttons", 22, 16, (114, 0), (114, 16)),
+        e += element("button", (TRANSPORT_X + sx, middle(18), w, 18), **sprite("cbuttons", w, 18, (sx, 0), (sx, 18)), click=click,
+                     **more, tip=tip)  # fmt: skip
+    e += element("button", (TRANSPORT_X + 114 + GAP, middle(16), 22, 16), **sprite("cbuttons", 22, 16, (114, 0), (114, 16)),
                  click="open-file", shift="open-folder", ctrl="open-url", menu="eject", tip="Open")  # fmt: skip
     for sx, state in ((0, "playing"), (9, "paused"), (18, "stopped")):
-        e += element("image", (DISPLAY_X + 4, mid, 9, 9), normal=area("playpaus", sx, 0, 9, 9), show=state)
+        e += element("image", (DISPLAY_X + 4, middle(9), 9, 9), normal=area("playpaus", sx, 0, 9, 9), show=state)
     e += element("clock", (*CLOCK, 63, 13), hide="stopped")
     e += element("button", (*CLOCK, 63, 13), press="toggle-time-mode", menu="time")
-    e += element("vis", (235, 3, 76, 16))
-    e += element("button", (235, 3, 76, 16), press="cycle-vis-mode", menu="vis")
+    e += element("vis", (BAR_LEFT - 80, middle(16), 76, 16))
+    e += element("button", (BAR_LEFT - 80, middle(16), 76, 16), press="cycle-vis-mode", menu="vis")
     e += element("marquee", (BAR_LEFT + 3, 3, end(-3), 9), double="file-info", cursor="songname",
                  tip="Song Title (right-click for options)", menu="song-title")  # fmt: skip
     thumb = sprite("posbar", 29, 10, (248, 0), (278, 0))
     e += element("slider", (BAR_LEFT, THUMB_TOP, end(0), THUMB_TOP + 10), value="position", thumb=thumb, thumb_len=29,
                  live=False, show="seekable", cursor="posbar", menu="seek")  # fmt: skip
-    track = {"file": "volume.svg", "first": [0, 0, 68, 13], "step": [0, 15], "count": 28}
-    thumb = {"normal": area("volume", 15, 422, 14, 11), "pressed": area("volume", 0, 422, 14, 11)}
-    thumb = {k: v | {"offset": [0, 1]} for k, v in thumb.items()}
-    e += element("slider", (end(9), 4, end(77), 17), value="volume", track=track, thumb=thumb, thumb_len=14, reset=200,
-                 wheel_step=8, cursor="volbal", tip="Volume")  # fmt: skip
+    track = {"file": f"{CONTROLS}.svg", "first": [0, VOLUME_TOP, VOLUME_W, VOLUME_H], "step": [0, VOLUME_H], "count": 28}
+    ty, tw, th = VOLUME_THUMB
+    thumb = {"normal": area(CONTROLS, 15, ty, tw, th), "pressed": area(CONTROLS, 0, ty, tw, th)}
+    thumb = {k: v | {"offset": [0, (VOLUME_H - th) // 2]} for k, v in thumb.items()}
+    top = middle(VOLUME_H)
+    e += element("slider", (end(9), top, end(9 + VOLUME_W), top + VOLUME_H), value="volume", track=track, thumb=thumb,
+                 thumb_len=tw, reset=200, wheel_step=8, cursor="volbal", tip="Volume")  # fmt: skip
     eq = ((0, 61), (46, 61), (0, 73), (46, 73))
-    e += toggle(eq, 23, 12, (82, 5), "eq-window", "toggle-eq-window")
-    e += toggle([(x + 23, y) for x, y in eq], 23, 12, (106, 5), "playlist-window", "toggle-playlist-window")
-    rows = (0, 15, 30, 45)
-    e += toggle([(28, y) for y in rows], 47, 15, (133, 3), "shuffle", "toggle-shuffle", menu="shuffle")
-    e += toggle([(0, y) for y in rows], 28, 15, (180, 3), "repeat", "toggle-repeat", menu="repeat")
-    close = BAR_RIGHT - BUTTON_INSET - b
-    e += element("button", (end(close), mid, end(close + b), mid + b), **sprite("titlebar", b, b, (18, 0), (18, b)),
+    e += toggle("shufrep", eq, 23, 12, (82, middle(12)), "eq-window", "toggle-eq-window")
+    e += toggle("shufrep", [(x + 23, y) for x, y in eq], 23, 12, (106, middle(12)), "playlist-window", "toggle-playlist-window")
+    rows = [TOGGLE_H * i for i in range(len(STATES))]
+    (sx, sw), (rx, rw) = SHUFFLE, REPEAT
+    e += toggle(CONTROLS, [(sx, y) for y in rows], sw, TOGGLE_H, (133, middle(TOGGLE_H)), "shuffle", "toggle-shuffle", menu="shuffle")
+    e += toggle(CONTROLS, [(rx, y) for y in rows], rw, TOGGLE_H, (133 + sw, middle(TOGGLE_H)), "repeat", "toggle-repeat", menu="repeat")
+    close = 133 + sw + rw + GAP
+    assert close + b + GAP == BAR_RIGHT, "Close sits as far from the bar's end as from Repeat"
+    e += element("button", (end(close), mid, end(close + b), mid + b), **sprite(CONTROLS, b, b, (b, 0), (b, b)),
                  click="exit", tip="Close")  # fmt: skip
     return e
 

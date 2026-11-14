@@ -121,25 +121,32 @@ def lettered_button(p, x, y, w, h, text, pressed=False, lit=None):
 TITLE_H = 14
 BOX = 9  # a title button
 STRIP = {True: ("title-top", "title-bottom", "title-line", "title-rule", "ink"), False: ("dull-top", "dull-bottom", "dull-line", "dull-rule", "dull-ink")}
-# A title button's glyph as rectangles in its 9 x 9 box
+# A title button's glyph as rectangles in its 9 x 9 box (Main Menu's and Close's are drawn to any size)
 GLYPHS = {
-    "menu": ((2, 2, 5, 1), (2, 4, 5, 1), (2, 6, 5, 1)),
     "min": ((2, 5, 5, 2),),
     "shade": ((2, 2, 5, 2),),
     "unshade": ((2, 2, 5, 1), (2, 3, 1, 3), (6, 3, 1, 3), (2, 6, 5, 1)),
 }
-CLOSE = "M2.5 2.5L6.5 6.5M6.5 2.5L2.5 6.5"
 
 
-def title_button(p, x, y, glyph, pressed=False):
-    button(p, x, y, BOX, BOX, pressed)
+def menu_glyph(size):
+    """Main Menu's three lines in a `size` box, as many rows above as below: one pixel thick in an odd box, two in an even one."""
+    t = 1 if size % 2 else 2
+    top = (size - 3 * t - 2) // 2
+    return tuple((2, top + i * (t + 1), size - 4, t) for i in range(3))
+
+
+def title_button(p, x, y, glyph, pressed=False, size=BOX):
+    button(p, x, y, size, size, pressed)
     d = press(pressed)
     if glyph == "close":
+        a, b = 2.5, size - 2.5
         p.body.append(f'<g transform="translate({x + d} {y + d})">')
-        p.line(CLOSE, "ink", 1.2)
+        p.line(f"M{a} {a}L{b} {b}M{b} {a}L{a} {b}", "ink", 1.2 * size / BOX)
         p.body.append("</g>")
-    else:
-        p.path("".join(f"M{x + gx + d} {y + gy + d}h{gw}v{gh}h{-gw}z" for gx, gy, gw, gh in GLYPHS[glyph]), "ink")
+        return
+    rects = menu_glyph(size) if glyph == "menu" else GLYPHS[glyph]
+    p.path("".join(f"M{x + gx + d} {y + gy + d}h{gw}v{gh}h{-gw}z" for gx, gy, gw, gh in rects), "ink")
 
 
 def strip_ground(p, x, y, w, focused, left=False, right=False):

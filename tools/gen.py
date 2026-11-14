@@ -75,8 +75,8 @@ def draw(path, w, h, art):
 def build(out):
     for name, (w, h, art) in SHEETS.items():
         draw(os.path.join(out, f"{name}.svg"), w, h, art)
-    for name, (w, art) in art_bar.PICTURES.items():
-        draw(os.path.join(out, "bar", f"{name}.svg"), w, art_bar.BAR_H, art)
+    for name, (w, h, art) in art_bar.PICTURES.items():
+        draw(os.path.join(out, "bar", f"{name}.svg"), w, h, art)
     draw(os.path.join(out, "ml", "title.svg"), art_pl.PLATE_W, 41, art_pl.ml_title)
     with open(os.path.join(out, "skin.toml"), "w", encoding="utf-8") as f:
         f.write(skin_toml())
