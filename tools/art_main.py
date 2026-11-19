@@ -15,10 +15,18 @@ RULES = (68, 85)  # the grooves above and below the position bar
 COLON = (72, (30, 35))  # the clock's colon: x, rows
 
 
-def logo(p, x, y):
-    """Popamp's little spectrum in its well: five bars, green to amber."""
-    for i, h in enumerate((5, 9, 12, 7, 10)):
-        p.rect(x + 2 + 3 * i, y + 13 - h, 2, h, level_colour(4 + 5 * i))
+# The bolt of Popamp's logo (assets/logo/popamp.svg), in that drawing's units.
+BOLT = ((117.57, 68.60), (151.46, 68.60), (128.00, 108.08), (158.91, 108.08), (108.26, 187.40), (124.28, 131.54), (97.09, 131.54))
+
+
+def logo(p, x, y, w, h):
+    """Popamp's lightning bolt, yellow on the panel, as tall as the place `w` x `h` and centred in it."""
+    xs, ys = [px for px, _ in BOLT], [py for _, py in BOLT]
+    scale = (h - 1) / (max(ys) - min(ys))
+    left = x + (w - (max(xs) - min(xs)) * scale) / 2
+    top = y + 0.5
+    points = "L".join(f"{left + (px - min(xs)) * scale:.2f} {top + (py - min(ys)) * scale:.2f}" for px, py in BOLT)
+    p.path(f"M{points}Z", "#ffd23f")
 
 
 def main(p):
@@ -34,8 +42,7 @@ def main(p):
     letters(p, "KHZ", KHZ[0] + KHZ[2] + 1, 43, "label")
     for y in RULES:
         rule(p, 8, y, 260)
-    well(p, *LOGO)
-    logo(p, LOGO[0], LOGO[1] + 1)
+    logo(p, *LOGO)
 
 
 # --- cbuttons.svg: the transport ----------------------------------------------------------------------
