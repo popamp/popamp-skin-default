@@ -127,10 +127,9 @@
 <path d="M61 53H69V54H62V71H61Z" fill="#f2a93b"/>
 <path d="M68 54H69V71H62V70H68Z" fill="#9c6214"/>
 <rect x="63" y="62" width="4" height="1" fill="#9c6214"/>
-<rect x="72" y="42" width="25" height="14" fill="url(#g0)"/>
-<rect x="72" y="42" width="25" height="1" fill="#7b8bb0" class="title-line"/>
+<rect x="72" y="42" width="25" height="14" fill="url(#g2)"/>
+<rect x="72" y="42" width="25" height="1" fill="#6e727b" class="dull-line"/>
 <rect x="72" y="55" width="25" height="1" fill="#12151c" class="shadow"/>
-<rect x="72" y="42" width="1" height="14" fill="#7b8bb0" class="title-line"/>
 <rect x="72" y="57" width="25" height="14" fill="url(#g2)"/>
 <rect x="72" y="57" width="25" height="1" fill="#6e727b" class="dull-line"/>
 <rect x="72" y="70" width="25" height="1" fill="#12151c" class="shadow"/>
