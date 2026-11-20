@@ -138,8 +138,10 @@ def vis_piece(p):
 
 def shade_pieces(p):
     """The shaded playlist: a left end, a tile and the right end with its buttons, focused at row 42, not at 57."""
-    strip_ground(p, 72, 42, 25, True, left=True)
-    strip_ground(p, 72, 57, 25, False)
+    # The middle is tiled with the unfocused left end, so both left ends are that same ground
+    # and only the right end shows focus: a lit left end would frame the title like a window.
+    for y in (42, 57):
+        strip_ground(p, 72, y, 25, False)
     for y, focused in ((42, True), (57, False)):
         strip_ground(p, 99, y, 50, focused, right=True)
         title_button(p, 99 + 50 - 21, y + 3, "unshade")
