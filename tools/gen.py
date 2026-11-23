@@ -47,13 +47,13 @@ format_version = 1
 min_popamp = "1.0.0"
 """
 
-PLAYLIST = {"normal": "#52e3a0", "current": "#e6eaf2", "normal_bg": "#06090d", "selected_bg": "#233a6b"}
+PLAYLIST = {"normal": "green", "current": "ink", "normal_bg": "lcd", "selected_bg": "select"}
 
 # Background, background dots, 16 spectrum colours from the top of a bar down, 5 oscilloscope colours, the peak dots.
 VIS = [
-    "#06090d", "#121c22", "#f0503c", "#f05c3c", "#f1683c", "#f1743c", "#f17f3b", "#f18b3b",
+    "lcd", "grid", "#f0503c", "#f05c3c", "#f1683c", "#f1743c", "#f17f3b", "#f18b3b",
     "#f2973b", "#f2a33b", "#e7ad42", "#d2b54f", "#bdbc5d", "#a7c46a", "#92cc78", "#7dd485",
-    "#67db93", "#52e3a0", "#e6eaf2", "#c1e8de", "#9ce7c9", "#77e5b5", "#52e3a0", "#e6eaf2",
+    "#67db93", "#52e3a0", "ink", "osc-2", "osc-3", "osc-4", "green", "ink",
 ]  # fmt: skip
 
 

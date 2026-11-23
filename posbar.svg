@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="307" height="10" viewBox="0 0 307 10">
 <defs>
-<linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#edc384"/><stop offset="1" stop-color="#9c6214"/></linearGradient>
-<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2a93b"/><stop offset="1" stop-color="#9c6214"/></linearGradient>
+<linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#edc384" class="amber-light-stop"/><stop offset="1" stop-color="#9c6214" class="amber-dark-stop"/></linearGradient>
+<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2a93b" class="amber-stop"/><stop offset="1" stop-color="#9c6214" class="amber-dark-stop"/></linearGradient>
 </defs>
 <rect x="0" y="0" width="307" height="10" fill="#2f3545" class="body"/>
 <path d="M0 3H248V4H1V7H0Z" fill="#12151c" class="shadow"/>
 <path d="M247 4H248V7H1V6H247Z" fill="#3b4358" class="rim"/>
-<rect x="1" y="4" width="246" height="2" fill="#06090d"/>
-<rect x="1" y="4" width="246" height="2" fill="#1f5a42"/>
+<rect x="1" y="4" width="246" height="2" fill="#06090d" class="lcd"/>
+<rect x="1" y="4" width="246" height="2" fill="#1f5a42" class="green-dim"/>
 <rect x="248" y="0" width="29" height="10" fill="url(#g0)"/>
-<path d="M248 0H277V1H249V10H248Z" fill="#edc384"/>
-<path d="M276 1H277V10H249V9H276Z" fill="#9c6214"/>
-<rect x="262" y="2" width="1" height="6" fill="#9c6214"/>
+<path d="M248 0H277V1H249V10H248Z" fill="#edc384" class="amber-light"/>
+<path d="M276 1H277V10H249V9H276Z" fill="#9c6214" class="amber-dark"/>
+<rect x="262" y="2" width="1" height="6" fill="#9c6214" class="amber-dark"/>
 <rect x="278" y="0" width="29" height="10" fill="url(#g1)"/>
-<path d="M278 0H307V1H279V10H278Z" fill="#f2a93b"/>
-<path d="M306 1H307V10H279V9H306Z" fill="#9c6214"/>
-<rect x="292" y="2" width="1" height="6" fill="#9c6214"/>
+<path d="M278 0H307V1H279V10H278Z" fill="#f2a93b" class="amber"/>
+<path d="M306 1H307V10H279V9H306Z" fill="#9c6214" class="amber-dark"/>
+<rect x="292" y="2" width="1" height="6" fill="#9c6214" class="amber-dark"/>
 </svg>

@@ -2,7 +2,7 @@
 <rect x="0" y="0" width="318" height="22" fill="#2f3545" class="body"/>
 <path d="M161 1H319V2H162V21H161Z" fill="#12151c" class="shadow"/>
 <path d="M318 2H319V21H162V20H318Z" fill="#3b4358" class="rim"/>
-<rect x="162" y="2" width="156" height="18" fill="#06090d"/>
-<rect x="207" y="8" width="2" height="2" fill="#52e3a0"/>
-<rect x="207" y="13" width="2" height="2" fill="#52e3a0"/>
+<rect x="162" y="2" width="156" height="18" fill="#06090d" class="lcd"/>
+<rect x="207" y="8" width="2" height="2" fill="#52e3a0" class="green"/>
+<rect x="207" y="13" width="2" height="2" fill="#52e3a0" class="green"/>
 </svg>
