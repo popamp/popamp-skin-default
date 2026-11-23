@@ -986,11 +986,11 @@ type = "button"
 edges = ["center-46", "end-22", "center-23", "end-4"]
 normal = { file = "cbuttons.svg", area = [23, 0, 23, 18] }
 pressed = { file = "cbuttons.svg", area = [23, 18, 23, 18] }
-click = "play"
+click = "library-play"
 shift = "open-file"
 ctrl = "open-url"
 menu = "play"
-tip = "Play"
+tip = "Play the picked track"
 
 [[window.normal.element]]
 type = "button"

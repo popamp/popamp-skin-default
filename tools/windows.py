@@ -177,7 +177,7 @@ def bottom_controls(v):
     left = ml.TRANSPORT_W // 2
     transport = (
         (0, 23, "previous", "Previous", {"shift": "back5s", "ctrl": "start-of-list", "menu": "previous"}),
-        (23, 23, "play", "Play", {"shift": "open-file", "ctrl": "open-url", "menu": "play"}),
+        (23, 23, "library-play", "Play the picked track", {"shift": "open-file", "ctrl": "open-url", "menu": "play"}),
         (46, 23, "pause", "Pause", {"menu": "pause"}),
         (69, 23, "stop", "Stop", {"shift": "stop-fadeout", "ctrl": "stop-after-current", "menu": "stop"}),
         (92, 22, "next", "Next", {"shift": "fwd5s", "ctrl": "end-of-list", "menu": "next"}),
