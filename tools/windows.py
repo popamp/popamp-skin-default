@@ -139,7 +139,8 @@ def centre(dx):
 def three(name, top, bottom, left_w, right_w, v):
     """A row of the library's pieces: `name`-left, `name`-mid tiled and `name`-right."""
     at = lambda part: {"normal": f"ml/{name}-{part}.svg"}
-    e = element("image", (0, top, left_w, bottom), v, **at("left"))
+    left = (0, top, left_w, bottom - top) if isinstance(bottom, int) else (0, top, left_w, bottom)  # all numbers: a rect
+    e = element("image", left, v, **at("left"))
     e += element("image", (left_w, top, f"end-{right_w}", bottom), v, **at("mid"), fill="tile")
     e += element("image", (f"end-{right_w}", top, "end", bottom), v, **at("right"))
     return e

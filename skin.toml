@@ -828,7 +828,7 @@ inactive = { file = "ml/title.svg", area = [0, 21, 100, 20] }
 
 [[window.normal.element]]
 type = "image"
-rect = [0, 14, 220, 63]
+rect = [0, 14, 220, 49]
 normal = "ml/strip-left.svg"
 
 [[window.normal.element]]
