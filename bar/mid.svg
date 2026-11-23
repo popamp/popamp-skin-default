@@ -2,6 +2,6 @@
 <rect x="0" y="0" width="8" height="22" fill="#2f3545" class="body"/>
 <path d="M-1 1H9V2H0V21H-1Z" fill="#12151c" class="shadow"/>
 <path d="M8 2H9V21H0V20H8Z" fill="#3b4358" class="rim"/>
-<rect x="0" y="2" width="8" height="18" fill="#06090d"/>
-<rect x="0" y="14" width="8" height="2" fill="#1f5a42"/>
+<rect x="0" y="2" width="8" height="18" fill="#06090d" class="lcd"/>
+<rect x="0" y="14" width="8" height="2" fill="#1f5a42" class="green-dim"/>
 </svg>

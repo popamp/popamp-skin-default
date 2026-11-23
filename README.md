@@ -13,9 +13,14 @@ is also a complete example of the
 [vector skin format](https://github.com/popamp/popamp/blob/main/docs/skin-format.md).
 
 Besides the classic windows it has a bar view of the main window (the main
-menu's Toolbar mode), a media library window with its own title, and five
-colour sets for the metal (Slate, Graphite, Plum, Pine and Wine) in the
-main menu's Colours.
+menu's Toolbar mode), a media library window with its own title, and
+seventeen colour sets in the main menu's Colours: five that tint the
+metal (Slate, Graphite, Plum, Pine and Wine) and twelve made from Base16
+schemes (Gruvbox, Solarized, Nord, Dracula, Monokai, One Dark,
+Catppuccin, Tokyo Night, Everforest, Rosé Pine, Kanagawa and Gotham),
+which colour the display, the lettering, the lamps and the playlist as
+well. The level meters (the equalizer's sliders and the spectrum) stay
+green to red in every set.
 
 The SVG files and `skin.toml` are written by `tools/gen.py`
 (`python3 -I -B tools/gen.py`). Every window is put together from the
@@ -24,10 +29,17 @@ one set of title buttons, where only the window's name differs, one kind
 of button, well and thumb. `text.svg` and `numbers.svg`, the lettering,
 are drawn by hand and the script reads its letters from `text.svg`.
 
-![Popamp Default: main window, equalizer and playlist in every colour set, and the bar below](preview.png)
+![Popamp Default: main window, equalizer and playlist in the tinted colour sets, and the bar below](preview.png)
+
+![Popamp Default in the twelve Base16 colour sets](preview-base16.png)
+
+`tools/base16.py` holds the Base16 schemes and `base16_set` in
+`tools/kit.py` turns one into a colour set; another scheme from
+[tinted-theming/schemes](https://github.com/tinted-theming/schemes) is one
+entry in its `SCHEMES`.
 
 A vector skin for [Popamp](https://github.com/popamp/popamp), skin format
-version 1. All artwork is the skin's own.
+version 1. All artwork is the skin's own; the Base16 colours are credited below.
 
 ## Change it
 
@@ -62,3 +74,8 @@ missing.
 
 Licensed under either of [Apache License 2.0](LICENSE-APACHE) or
 [MIT license](LICENSE-MIT) at your option.
+
+The Base16 schemes' colours are from
+[tinted-theming/schemes](https://github.com/tinted-theming/schemes), MIT
+licence ([LICENSE-BASE16](LICENSE-BASE16)); each scheme's author is named
+in `tools/base16.py`.
