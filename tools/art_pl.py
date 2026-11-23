@@ -54,11 +54,11 @@ def top_tile(p, y, focused):
     p.rect(TOP_TILE, y + LIST_TOP, PIECE_W, 1, "shadow")
 
 
-def top_right(p, y, focused):
-    x = TOP_RIGHT
+def top_right(p, y, focused, x=TOP_RIGHT, glyph="shade"):
+    """The title's right end with `glyph`'s button and Close."""
     strip_ground(p, x, y, PIECE_W, focused, right=True)
     title_rules(p, x, x + PIECE_W - RIGHT_BUTTONS["shade"] + 1 - 4, y, focused)
-    title_button(p, x + PIECE_W - 20, y + 3, "shade")
+    title_button(p, x + PIECE_W - 20, y + 3, glyph)
     title_button(p, x + PIECE_W - 11, y + 3, "close")
     panel_rows(p, x, y, PIECE_W)
     p.rect(x + PIECE_W - 1, y + TITLE_H, 1, TOP_H - TITLE_H, "shadow")

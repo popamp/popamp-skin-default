@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="38" viewBox="0 0 120 38">
+<defs>
+<linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5d6780" class="face-top-stop"/><stop offset="1" stop-color="#394052" class="face-bottom-stop"/></linearGradient>
+</defs>
+<rect x="0" y="0" width="120" height="38" fill="#2f3545" class="body"/>
+<rect x="0" y="0" width="120" height="1" fill="#3b4358" class="rim"/>
+<rect x="0" y="37" width="120" height="1" fill="#12151c" class="shadow"/>
+<rect x="119" y="0" width="1" height="38" fill="#12151c" class="shadow"/>
+<rect x="104" y="0" width="1" height="1" fill="#12151c" class="shadow"/>
+<rect x="105" y="0" width="8" height="1" fill="#3b4358" class="rim"/>
+<path d="M-1 5H114V6H0V9H-1Z" fill="#12151c" class="shadow"/>
+<path d="M113 6H114V9H0V8H113Z" fill="#3b4358" class="rim"/>
+<rect x="0" y="6" width="113" height="2" fill="#06090d" class="lcd"/>
+<rect x="0" y="6" width="113" height="2" fill="#1f5a42" class="green-dim"/>
+<rect x="78" y="16" width="22" height="18" fill="url(#g0)"/>
+<path d="M78 16H100V17H79V34H78Z" fill="#8d95a8" class="face-light"/>
+<path d="M99 17H100V34H79V33H99Z" fill="#12151c" class="shadow"/>
+<path d="M79 22H80V26H83V27H79zM84 22H87V23H86V26H87V27H84V26H85V23H84zM89 23H90V24H92V25H93V26H92V27H89V26H92V25H90V24H89zM90 22H93V23H90zM94 22H97V23H96V27H95V23H94z" fill="#e6eaf2" class="ink"/>
+<path d="M117 35h1v1h-1zM117 32h1v1h-1zM117 29h1v1h-1zM117 26h1v1h-1zM114 35h1v1h-1zM114 32h1v1h-1zM114 29h1v1h-1zM111 35h1v1h-1zM111 32h1v1h-1zM108 35h1v1h-1z" fill="#666d7f" class="edge"/>
+</svg>

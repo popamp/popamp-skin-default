@@ -32,7 +32,10 @@ pub const FILES: &[(&str, &[u8])] = files!(
     "ml/strip-left.svg",
     "ml/strip-mid.svg",
     "ml/strip-right.svg",
-    "ml/bottom.svg"
+    "ml/bottom-left.svg",
+    "ml/bottom-mid.svg",
+    "ml/bottom-right.svg",
+    "ml/title-right.svg"
 );
 
 #[cfg(test)]

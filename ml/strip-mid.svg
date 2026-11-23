@@ -1,11 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="8" height="46" viewBox="0 0 8 46">
-<rect x="0" y="0" width="8" height="46" fill="#2f3545" class="body"/>
-<rect x="0" y="45" width="8" height="1" fill="#12151c" class="shadow"/>
-<path d="M-1 2H9V3H0V22H-1Z" fill="#12151c" class="shadow"/>
-<path d="M8 3H9V22H0V21H8Z" fill="#3b4358" class="rim"/>
-<rect x="0" y="3" width="8" height="18" fill="#06090d" class="lcd"/>
-<path d="M-1 32H9V33H0V36H-1Z" fill="#12151c" class="shadow"/>
-<path d="M8 33H9V36H0V35H8Z" fill="#3b4358" class="rim"/>
-<rect x="0" y="33" width="8" height="2" fill="#06090d" class="lcd"/>
-<rect x="0" y="33" width="8" height="2" fill="#1f5a42" class="green-dim"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="49" viewBox="0 0 8 49">
+<rect x="0" y="0" width="8" height="49" fill="#2f3545" class="body"/>
+<rect x="0" y="48" width="8" height="1" fill="#12151c" class="shadow"/>
+<path d="M-1 2H9V3H0V46H-1Z" fill="#12151c" class="shadow"/>
+<path d="M8 3H9V46H0V45H8Z" fill="#3b4358" class="rim"/>
+<rect x="0" y="3" width="8" height="42" fill="#06090d" class="lcd"/>
 </svg>
